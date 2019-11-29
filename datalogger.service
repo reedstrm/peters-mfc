@@ -1,0 +1,15 @@
+[Unit]
+Description=Data Logger Service
+After=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/media/pi/2C80-1657
+ExecStart=/usr/local/bin/datalog.py
+Restart=always
+
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
